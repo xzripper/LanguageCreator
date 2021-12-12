@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>stringparser API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>stringparser</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from typing import Union
+
+
+class StringParser:
+    def __init__(self, string: str) -&gt; None:
+        &#34;&#34;&#34;
+        String parser tools.
+        If string is not str, string will be None.
+
+        :param string: String to parse.
+        &#34;&#34;&#34;
+        if type(string) is not str:
+            self.string = None
+
+        elif type(string) is str:
+            self.string = string
+
+    def getstr(self) -&gt; Union[None, str]:
+        &#34;&#34;&#34;Get user string.&#34;&#34;&#34;
+        return self.string
+
+    def updatestr(self, string: str) -&gt; None:
+        &#34;&#34;&#34;
+        Replace old string on new string.
+
+        :param string: Updated string.
+        &#34;&#34;&#34;
+        self.__init__(string)
+
+    def cutstart(self, fr: int) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Cut string from start.
+
+        :param fr: Cut from.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        return self.string[fr:]
+
+    def cutend(self, fr: int) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Cut string from end.
+
+        :param fr: Cut from.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        return self.string[:fr]
+
+    def cut(self, start: int, end: int) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Cut string by start and end.
+
+        :param start: Cut from start.
+        :param end: Cut from end.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        return self.string[start:][:end]
+
+    def remspaces(self, side: str) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Remove spaces from n side.
+        Returns None if error.
+
+        :param side: Remove spaces from n side.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        if side == &#39;right&#39;:
+            return self.string.rstrip()
+
+        elif side == &#39;left&#39;:
+            return self.string.lstrip()
+
+        elif side == &#39;all&#39;:
+            return self.string.rstrip().lstrip()
+
+        else:
+            return None
+
+    def replace(self, old: Union[tuple, list, str], new: Union[tuple, list, str]) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Replace old character on new.
+        If old and new is tuple or list, it&#39;s removes old characters on new characters.
+
+        :param old: Old character.
+        :param new: New character.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        replaced = self.string
+
+        if (type(old) is tuple or type(old) is list) and (type(new) is tuple or type(new) is list):
+            if len(new) &lt; len(old) or len(new) &gt; len(old):
+                return None
+
+            for i in range(len(old)):
+                replaced = replaced.replace(old[i], new[i])
+
+            return replaced
+
+        elif (type(old) is str) and (type(new) is str):
+            return self.string.replace(old, new)
+
+        else:
+            return None
+
+    def crash(self, separator: Union[tuple, list, str], getdict: bool = False) -&gt; Union[None, list, dict]:
+        &#34;&#34;&#34;
+        Crash a string by separator.
+        If separator is tuple or list, it will be splitting step by step.
+        If separator is not str or tuple or list, returns None.
+
+        :param separator: Separator to crash.
+        :param getdict: Get dict as return when separator is tuple or list.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        dsplitted = {}
+        splitted = []
+
+        if type(separator) is tuple or type(separator) is list:
+            if getdict:
+                for divider in separator:
+                    dsplitted[divider] = self.string.split(divider)
+
+                return dsplitted
+
+            elif not getdict:
+                for divider in separator:
+                    splitted.append(self.string.split(divider))
+
+                return splitted
+
+        elif type(separator) is str:
+            return self.string.split(separator)
+
+        else:
+            return None
+
+    def remove(self, char: str, times: int) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Remove character from string.
+        If times is -1, removing all, else removing only N times.
+
+        :param char: Character to remove.
+        :param times: Remove character N times.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        if times == -1:
+            return self.string.replace(char, &#39;&#39;)
+
+        elif times != -1:
+            return self.string.replace(char, &#39;&#39;, times)
+
+    def tocase(self, case: int) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Convert string to case.
+
+        Types:
+            1 - To lower.
+            2 - To upper.
+            3 - To title.
+            4 - Capitalize.
+
+        :param case: Type of case.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        if case == 1:
+            return self.string.lower()
+
+        elif case == 2:
+            return self.string.upper()
+
+        elif case == 3:
+            return self.string.title()
+
+        elif case == 4:
+            return self.string.capitalize()
+
+        else:
+            return None
+
+    def inscobes(self, rlcs: bool) -&gt; Union[None, bool]:
+        &#34;&#34;&#34;
+        Is string in scobes.
+        If rlcs is not True and not False, returns None.
+
+        :param rlcs: Is &#34;&lt;&gt;&#34; scobes too.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        scobes = f&#39;{self.string[0]}{self.string[-1]}&#39;
+
+        if rlcs:
+            return scobes == &#39;()&#39; or scobes == &#39;[]&#39; or scobes == &#39;{}&#39; or scobes == &#39;&lt;&gt;&#39;
+
+        elif not rlcs:
+            return scobes == &#39;()&#39; or scobes == &#39;[]&#39; or scobes == &#39;{}&#39;
+
+        else:
+            return None
+
+    def getfromscobes(self) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Get string from scobes.
+        If string not in scobes, returns None.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        if not self.inscobes(True):
+            return None
+
+        elif self.inscobes(True):
+            return self.cut(1, -1)
+
+    def instring(self, string: str) -&gt; Union[None, bool]:
+        &#34;&#34;&#34;
+        Is sub-string in string.
+
+        :param string: Sub-string.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return None
+
+        return string in self.string
+
+    @staticmethod
+    def newstr(string: str) -&gt; str:
+        &#34;&#34;&#34;
+        Get user object from args converted in str.
+
+        :param string: Target string.
+        &#34;&#34;&#34;
+        return str(string)
+
+    def clearstr(self) -&gt; None:
+        &#34;&#34;&#34;Clear string.&#34;&#34;&#34;
+        self.string = None</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="stringparser.StringParser"><code class="flex name class">
+<span>class <span class="ident">StringParser</span></span>
+<span>(</span><span>string: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>String parser tools.
+If string is not str, string will be None.</p>
+<p>:param string: String to parse.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StringParser:
+    def __init__(self, string: str) -&gt; None:
+        &#34;&#34;&#34;
+        String parser tools.
+        If string is not str, string will be None.
+
+        :param string: String to parse.
+        &#34;&#34;&#34;
+        if type(string) is not str:
+            self.string = None
+
+        elif type(string) is str:
+            self.string = string
+
+    def getstr(self) -&gt; Union[None, str]:
+        &#34;&#34;&#34;Get user string.&#34;&#34;&#34;
+        return self.string
+
+    def updatestr(self, string: str) -&gt; None:
+        &#34;&#34;&#34;
+        Replace old string on new string.
+
+        :param string: Updated string.
+        &#34;&#34;&#34;
+        self.__init__(string)
+
+    def cutstart(self, fr: int) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Cut string from start.
+
+        :param fr: Cut from.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        return self.string[fr:]
+
+    def cutend(self, fr: int) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Cut string from end.
+
+        :param fr: Cut from.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        return self.string[:fr]
+
+    def cut(self, start: int, end: int) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Cut string by start and end.
+
+        :param start: Cut from start.
+        :param end: Cut from end.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        return self.string[start:][:end]
+
+    def remspaces(self, side: str) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Remove spaces from n side.
+        Returns None if error.
+
+        :param side: Remove spaces from n side.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        if side == &#39;right&#39;:
+            return self.string.rstrip()
+
+        elif side == &#39;left&#39;:
+            return self.string.lstrip()
+
+        elif side == &#39;all&#39;:
+            return self.string.rstrip().lstrip()
+
+        else:
+            return None
+
+    def replace(self, old: Union[tuple, list, str], new: Union[tuple, list, str]) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Replace old character on new.
+        If old and new is tuple or list, it&#39;s removes old characters on new characters.
+
+        :param old: Old character.
+        :param new: New character.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        replaced = self.string
+
+        if (type(old) is tuple or type(old) is list) and (type(new) is tuple or type(new) is list):
+            if len(new) &lt; len(old) or len(new) &gt; len(old):
+                return None
+
+            for i in range(len(old)):
+                replaced = replaced.replace(old[i], new[i])
+
+            return replaced
+
+        elif (type(old) is str) and (type(new) is str):
+            return self.string.replace(old, new)
+
+        else:
+            return None
+
+    def crash(self, separator: Union[tuple, list, str], getdict: bool = False) -&gt; Union[None, list, dict]:
+        &#34;&#34;&#34;
+        Crash a string by separator.
+        If separator is tuple or list, it will be splitting step by step.
+        If separator is not str or tuple or list, returns None.
+
+        :param separator: Separator to crash.
+        :param getdict: Get dict as return when separator is tuple or list.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        dsplitted = {}
+        splitted = []
+
+        if type(separator) is tuple or type(separator) is list:
+            if getdict:
+                for divider in separator:
+                    dsplitted[divider] = self.string.split(divider)
+
+                return dsplitted
+
+            elif not getdict:
+                for divider in separator:
+                    splitted.append(self.string.split(divider))
+
+                return splitted
+
+        elif type(separator) is str:
+            return self.string.split(separator)
+
+        else:
+            return None
+
+    def remove(self, char: str, times: int) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Remove character from string.
+        If times is -1, removing all, else removing only N times.
+
+        :param char: Character to remove.
+        :param times: Remove character N times.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        if times == -1:
+            return self.string.replace(char, &#39;&#39;)
+
+        elif times != -1:
+            return self.string.replace(char, &#39;&#39;, times)
+
+    def tocase(self, case: int) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Convert string to case.
+
+        Types:
+            1 - To lower.
+            2 - To upper.
+            3 - To title.
+            4 - Capitalize.
+
+        :param case: Type of case.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        if case == 1:
+            return self.string.lower()
+
+        elif case == 2:
+            return self.string.upper()
+
+        elif case == 3:
+            return self.string.title()
+
+        elif case == 4:
+            return self.string.capitalize()
+
+        else:
+            return None
+
+    def inscobes(self, rlcs: bool) -&gt; Union[None, bool]:
+        &#34;&#34;&#34;
+        Is string in scobes.
+        If rlcs is not True and not False, returns None.
+
+        :param rlcs: Is &#34;&lt;&gt;&#34; scobes too.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        scobes = f&#39;{self.string[0]}{self.string[-1]}&#39;
+
+        if rlcs:
+            return scobes == &#39;()&#39; or scobes == &#39;[]&#39; or scobes == &#39;{}&#39; or scobes == &#39;&lt;&gt;&#39;
+
+        elif not rlcs:
+            return scobes == &#39;()&#39; or scobes == &#39;[]&#39; or scobes == &#39;{}&#39;
+
+        else:
+            return None
+
+    def getfromscobes(self) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        Get string from scobes.
+        If string not in scobes, returns None.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return self.string
+
+        if not self.inscobes(True):
+            return None
+
+        elif self.inscobes(True):
+            return self.cut(1, -1)
+
+    def instring(self, string: str) -&gt; Union[None, bool]:
+        &#34;&#34;&#34;
+        Is sub-string in string.
+
+        :param string: Sub-string.
+        &#34;&#34;&#34;
+        if self.string is None:
+            return None
+
+        return string in self.string
+
+    @staticmethod
+    def newstr(string: str) -&gt; str:
+        &#34;&#34;&#34;
+        Get user object from args converted in str.
+
+        :param string: Target string.
+        &#34;&#34;&#34;
+        return str(string)
+
+    def clearstr(self) -&gt; None:
+        &#34;&#34;&#34;Clear string.&#34;&#34;&#34;
+        self.string = None</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="stringparser.StringParser.newstr"><code class="name flex">
+<span>def <span class="ident">newstr</span></span>(<span>string: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get user object from args converted in str.</p>
+<p>:param string: Target string.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def newstr(string: str) -&gt; str:
+    &#34;&#34;&#34;
+    Get user object from args converted in str.
+
+    :param string: Target string.
+    &#34;&#34;&#34;
+    return str(string)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="stringparser.StringParser.clearstr"><code class="name flex">
+<span>def <span class="ident">clearstr</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clear string.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clearstr(self) -&gt; None:
+    &#34;&#34;&#34;Clear string.&#34;&#34;&#34;
+    self.string = None</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.crash"><code class="name flex">
+<span>def <span class="ident">crash</span></span>(<span>self, separator: Union[tuple, list, str], getdict: bool = False) ‑> Union[ForwardRef(None), list, dict]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Crash a string by separator.
+If separator is tuple or list, it will be splitting step by step.
+If separator is not str or tuple or list, returns None.</p>
+<p>:param separator: Separator to crash.
+:param getdict: Get dict as return when separator is tuple or list.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def crash(self, separator: Union[tuple, list, str], getdict: bool = False) -&gt; Union[None, list, dict]:
+    &#34;&#34;&#34;
+    Crash a string by separator.
+    If separator is tuple or list, it will be splitting step by step.
+    If separator is not str or tuple or list, returns None.
+
+    :param separator: Separator to crash.
+    :param getdict: Get dict as return when separator is tuple or list.
+    &#34;&#34;&#34;
+    if self.string is None:
+        return self.string
+
+    dsplitted = {}
+    splitted = []
+
+    if type(separator) is tuple or type(separator) is list:
+        if getdict:
+            for divider in separator:
+                dsplitted[divider] = self.string.split(divider)
+
+            return dsplitted
+
+        elif not getdict:
+            for divider in separator:
+                splitted.append(self.string.split(divider))
+
+            return splitted
+
+    elif type(separator) is str:
+        return self.string.split(separator)
+
+    else:
+        return None</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.cut"><code class="name flex">
+<span>def <span class="ident">cut</span></span>(<span>self, start: int, end: int) ‑> Optional[None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cut string by start and end.</p>
+<p>:param start: Cut from start.
+:param end: Cut from end.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cut(self, start: int, end: int) -&gt; Union[None, str]:
+    &#34;&#34;&#34;
+    Cut string by start and end.
+
+    :param start: Cut from start.
+    :param end: Cut from end.
+    &#34;&#34;&#34;
+    if self.string is None:
+        return self.string
+
+    return self.string[start:][:end]</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.cutend"><code class="name flex">
+<span>def <span class="ident">cutend</span></span>(<span>self, fr: int) ‑> Optional[None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cut string from end.</p>
+<p>:param fr: Cut from.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cutend(self, fr: int) -&gt; Union[None, str]:
+    &#34;&#34;&#34;
+    Cut string from end.
+
+    :param fr: Cut from.
+    &#34;&#34;&#34;
+    if self.string is None:
+        return self.string
+
+    return self.string[:fr]</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.cutstart"><code class="name flex">
+<span>def <span class="ident">cutstart</span></span>(<span>self, fr: int) ‑> Optional[None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Cut string from start.</p>
+<p>:param fr: Cut from.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cutstart(self, fr: int) -&gt; Union[None, str]:
+    &#34;&#34;&#34;
+    Cut string from start.
+
+    :param fr: Cut from.
+    &#34;&#34;&#34;
+    if self.string is None:
+        return self.string
+
+    return self.string[fr:]</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.getfromscobes"><code class="name flex">
+<span>def <span class="ident">getfromscobes</span></span>(<span>self) ‑> Optional[None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get string from scobes.
+If string not in scobes, returns None.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getfromscobes(self) -&gt; Union[None, str]:
+    &#34;&#34;&#34;
+    Get string from scobes.
+    If string not in scobes, returns None.
+    &#34;&#34;&#34;
+    if self.string is None:
+        return self.string
+
+    if not self.inscobes(True):
+        return None
+
+    elif self.inscobes(True):
+        return self.cut(1, -1)</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.getstr"><code class="name flex">
+<span>def <span class="ident">getstr</span></span>(<span>self) ‑> Optional[None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get user string.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getstr(self) -&gt; Union[None, str]:
+    &#34;&#34;&#34;Get user string.&#34;&#34;&#34;
+    return self.string</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.inscobes"><code class="name flex">
+<span>def <span class="ident">inscobes</span></span>(<span>self, rlcs: bool) ‑> Optional[None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is string in scobes.
+If rlcs is not True and not False, returns None.</p>
+<p>:param rlcs: Is "&lt;&gt;" scobes too.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def inscobes(self, rlcs: bool) -&gt; Union[None, bool]:
+    &#34;&#34;&#34;
+    Is string in scobes.
+    If rlcs is not True and not False, returns None.
+
+    :param rlcs: Is &#34;&lt;&gt;&#34; scobes too.
+    &#34;&#34;&#34;
+    if self.string is None:
+        return self.string
+
+    scobes = f&#39;{self.string[0]}{self.string[-1]}&#39;
+
+    if rlcs:
+        return scobes == &#39;()&#39; or scobes == &#39;[]&#39; or scobes == &#39;{}&#39; or scobes == &#39;&lt;&gt;&#39;
+
+    elif not rlcs:
+        return scobes == &#39;()&#39; or scobes == &#39;[]&#39; or scobes == &#39;{}&#39;
+
+    else:
+        return None</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.instring"><code class="name flex">
+<span>def <span class="ident">instring</span></span>(<span>self, string: str) ‑> Optional[None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is sub-string in string.</p>
+<p>:param string: Sub-string.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def instring(self, string: str) -&gt; Union[None, bool]:
+    &#34;&#34;&#34;
+    Is sub-string in string.
+
+    :param string: Sub-string.
+    &#34;&#34;&#34;
+    if self.string is None:
+        return None
+
+    return string in self.string</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.remove"><code class="name flex">
+<span>def <span class="ident">remove</span></span>(<span>self, char: str, times: int) ‑> Optional[None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove character from string.
+If times is -1, removing all, else removing only N times.</p>
+<p>:param char: Character to remove.
+:param times: Remove character N times.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove(self, char: str, times: int) -&gt; Union[None, str]:
+    &#34;&#34;&#34;
+    Remove character from string.
+    If times is -1, removing all, else removing only N times.
+
+    :param char: Character to remove.
+    :param times: Remove character N times.
+    &#34;&#34;&#34;
+    if self.string is None:
+        return self.string
+
+    if times == -1:
+        return self.string.replace(char, &#39;&#39;)
+
+    elif times != -1:
+        return self.string.replace(char, &#39;&#39;, times)</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.remspaces"><code class="name flex">
+<span>def <span class="ident">remspaces</span></span>(<span>self, side: str) ‑> Optional[None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove spaces from n side.
+Returns None if error.</p>
+<p>:param side: Remove spaces from n side.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remspaces(self, side: str) -&gt; Union[None, str]:
+    &#34;&#34;&#34;
+    Remove spaces from n side.
+    Returns None if error.
+
+    :param side: Remove spaces from n side.
+    &#34;&#34;&#34;
+    if self.string is None:
+        return self.string
+
+    if side == &#39;right&#39;:
+        return self.string.rstrip()
+
+    elif side == &#39;left&#39;:
+        return self.string.lstrip()
+
+    elif side == &#39;all&#39;:
+        return self.string.rstrip().lstrip()
+
+    else:
+        return None</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.replace"><code class="name flex">
+<span>def <span class="ident">replace</span></span>(<span>self, old: Union[tuple, list, str], new: Union[tuple, list, str]) ‑> Optional[None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Replace old character on new.
+If old and new is tuple or list, it's removes old characters on new characters.</p>
+<p>:param old: Old character.
+:param new: New character.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def replace(self, old: Union[tuple, list, str], new: Union[tuple, list, str]) -&gt; Union[None, str]:
+    &#34;&#34;&#34;
+    Replace old character on new.
+    If old and new is tuple or list, it&#39;s removes old characters on new characters.
+
+    :param old: Old character.
+    :param new: New character.
+    &#34;&#34;&#34;
+    if self.string is None:
+        return self.string
+
+    replaced = self.string
+
+    if (type(old) is tuple or type(old) is list) and (type(new) is tuple or type(new) is list):
+        if len(new) &lt; len(old) or len(new) &gt; len(old):
+            return None
+
+        for i in range(len(old)):
+            replaced = replaced.replace(old[i], new[i])
+
+        return replaced
+
+    elif (type(old) is str) and (type(new) is str):
+        return self.string.replace(old, new)
+
+    else:
+        return None</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.tocase"><code class="name flex">
+<span>def <span class="ident">tocase</span></span>(<span>self, case: int) ‑> Optional[None]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert string to case.</p>
+<h2 id="types">Types</h2>
+<p>1 - To lower.
+2 - To upper.
+3 - To title.
+4 - Capitalize.</p>
+<p>:param case: Type of case.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tocase(self, case: int) -&gt; Union[None, str]:
+    &#34;&#34;&#34;
+    Convert string to case.
+
+    Types:
+        1 - To lower.
+        2 - To upper.
+        3 - To title.
+        4 - Capitalize.
+
+    :param case: Type of case.
+    &#34;&#34;&#34;
+    if self.string is None:
+        return self.string
+
+    if case == 1:
+        return self.string.lower()
+
+    elif case == 2:
+        return self.string.upper()
+
+    elif case == 3:
+        return self.string.title()
+
+    elif case == 4:
+        return self.string.capitalize()
+
+    else:
+        return None</code></pre>
+</details>
+</dd>
+<dt id="stringparser.StringParser.updatestr"><code class="name flex">
+<span>def <span class="ident">updatestr</span></span>(<span>self, string: str) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Replace old string on new string.</p>
+<p>:param string: Updated string.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def updatestr(self, string: str) -&gt; None:
+    &#34;&#34;&#34;
+    Replace old string on new string.
+
+    :param string: Updated string.
+    &#34;&#34;&#34;
+    self.__init__(string)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="stringparser.StringParser" href="#stringparser.StringParser">StringParser</a></code></h4>
+<ul class="two-column">
+<li><code><a title="stringparser.StringParser.clearstr" href="#stringparser.StringParser.clearstr">clearstr</a></code></li>
+<li><code><a title="stringparser.StringParser.crash" href="#stringparser.StringParser.crash">crash</a></code></li>
+<li><code><a title="stringparser.StringParser.cut" href="#stringparser.StringParser.cut">cut</a></code></li>
+<li><code><a title="stringparser.StringParser.cutend" href="#stringparser.StringParser.cutend">cutend</a></code></li>
+<li><code><a title="stringparser.StringParser.cutstart" href="#stringparser.StringParser.cutstart">cutstart</a></code></li>
+<li><code><a title="stringparser.StringParser.getfromscobes" href="#stringparser.StringParser.getfromscobes">getfromscobes</a></code></li>
+<li><code><a title="stringparser.StringParser.getstr" href="#stringparser.StringParser.getstr">getstr</a></code></li>
+<li><code><a title="stringparser.StringParser.inscobes" href="#stringparser.StringParser.inscobes">inscobes</a></code></li>
+<li><code><a title="stringparser.StringParser.instring" href="#stringparser.StringParser.instring">instring</a></code></li>
+<li><code><a title="stringparser.StringParser.newstr" href="#stringparser.StringParser.newstr">newstr</a></code></li>
+<li><code><a title="stringparser.StringParser.remove" href="#stringparser.StringParser.remove">remove</a></code></li>
+<li><code><a title="stringparser.StringParser.remspaces" href="#stringparser.StringParser.remspaces">remspaces</a></code></li>
+<li><code><a title="stringparser.StringParser.replace" href="#stringparser.StringParser.replace">replace</a></code></li>
+<li><code><a title="stringparser.StringParser.tocase" href="#stringparser.StringParser.tocase">tocase</a></code></li>
+<li><code><a title="stringparser.StringParser.updatestr" href="#stringparser.StringParser.updatestr">updatestr</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
