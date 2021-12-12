@@ -58,7 +58,7 @@ Result.
 20
 ```
 
-Yeap, this code doesn't clean, but it's works... In real projects i never do this.<br>
+Yeap, this code doesn't clean, and better not to use, but it's works... In real projects i never do this.<br>
 So, how you see, we maked this <a href="https://github.com/xzripper/MathLang">repository</a> in 1 minute.<br>
 This code (not library) have many bugs, and this is very raw code.<br>
 
